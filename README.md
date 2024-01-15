@@ -87,6 +87,7 @@ In contra part of this two options, CELAUT allows to take the advangates of the 
 - You don’t need to configure anything, as the specification service covers how the container is built, his architecture, his network requirements and his interface, the user don’t need to know anything about that.
 - The developers of a service cannot control, modify or extract data of the service as they don’t control the nodes that distribute and runs it. Although they could be incentivized to develop it.
 
+<br>
 
 ## More
 
