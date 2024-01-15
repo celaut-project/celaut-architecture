@@ -52,11 +52,11 @@ CELAUT intend to solve is precisely the separation between the “*how to solve 
 
 Take, for example, a trading bot.
 
-<aside>
-💡 Trading bots are automated software programs that execute buy and sell orders in financial markets based on predefined algorithms. They are important as they can operate 24/7, react quickly to market changes, and remove emotional biases, enhancing efficiency and consistency in trading strategies.
+    Trading bots are automated software programs that execute buy and sell orders in financial markets based on predefined algorithms. They are important as they can operate 24/7, react quickly to market changes, and remove emotional biases, enhancing efficiency and consistency in trading strategies.
 
-</aside>
+
 <br>
+
 In this context, if you want to use a trading bot right now, You will go to the web and can:
 
 1. Look for a web service that will manage your asset portfolio, which has:
