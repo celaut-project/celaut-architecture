@@ -27,3 +27,6 @@ This component defines the database that the service can provide, including the 
 >The specification of a service is a key part of the CELAUT architecture, as it allows services to be deployed and executed in a consistent and predictable manner. 
 
 >The specification of a service also allows for services to be shared and reused across the network, which can help to reduce development costs and improve the overall efficiency of the system.
+
+
+[Proto3 implementation](https://github.com/celaut-project/node-driver/blob/main/src/node_driver/gateway/protos/celaut.proto#L66)
