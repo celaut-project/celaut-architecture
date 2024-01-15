@@ -1,4 +1,4 @@
-# CELAUT: An architecture for software design and distribution
+# CELAUT: A peer-to-peer architecture for software design and distribution
 
 <br>
 
