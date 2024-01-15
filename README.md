@@ -21,7 +21,7 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 ## Definition
 
-CELAUT is a set of simple rules for software design and distribution. It is based on two main elements: nodes and services.
+*CELAUT is a set of simple rules for software design and distribution. It is based on two main elements: nodes and services.*
 
 ### Nodes
 
@@ -38,7 +38,7 @@ A node can choose whether to build a new instance locally or request it from ano
 
 ### Services
 
-A service is software that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function.
+A service is software that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function. Could be called "bots" too.
 
 <br>
 
@@ -52,7 +52,7 @@ CELAUT intend to solve is precisely the separation between the “*how to solve 
 
 Take, for example, a trading bot.
 
-    Trading bots are automated software programs that execute buy and sell orders in financial markets based on predefined algorithms. They are important as they can operate 24/7, react quickly to market changes, and remove emotional biases, enhancing efficiency and consistency in trading strategies.
+>Trading bots are automated software programs that execute buy and sell orders in financial markets based on predefined algorithms. They are important as they can operate 24/7, react quickly to market changes, and remove emotional biases, enhancing efficiency and consistency in trading strategies.
 
 
 <br>
@@ -83,9 +83,14 @@ In this context, if you want to use a trading bot right now, You will go to the 
 
 In contra part of this two options, CELAUT allows to take the advangates of the two previous solutions without their disadvantages. There’s why:
 
-- You don’t need to run the infrastructure yourself or search for a cloud provider to do that, as the node takes care of this.
-- You don’t need to configure anything, as the specification service covers how the container is built, his architecture, his network requirements and his interface, the user don’t need to know anything about that.
-- The developers of a service cannot control, modify or extract data of the service as they don’t control the nodes that distribute and runs it. Although they could be incentivized to develop it.
+
+
+- Infrastructure management is unnecessary, as the nodes handle it. There is no need to seek out a cloud provider.
+
+- No configuration is required. The specification service covers how the container is built, its architecture, its network requirements, and its interface. Users do not need to be concerned about any of this.
+
+- Service developers cannot control, modify, or extract data from the service. They do not control the nodes that distribute and run it. However, they may be incentivized to create it.
+
 
 <br>
 
