@@ -1,3 +1,5 @@
+# CELAUT: An architecture for software design and distribution
+
 [Context](context.md)
 
 [Definition](definition.md)

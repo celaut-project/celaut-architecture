@@ -1,5 +1,3 @@
-# CELAUT: An architecture for software design and distribution
-
 CELAUT is a set of simple rules for software design and distribution. It is based on two main elements: nodes and services.
 
 ## Nodes
