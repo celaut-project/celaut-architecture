@@ -97,3 +97,5 @@ In contra part of this two options, CELAUT allows to take the advangates of the 
 [FAQ](faq.md)
 
 [Roadmap](roadmap.svg)
+
+[Ergo-forum conversation](https://www.ergoforum.org/t/artifical-economic-intelligence-on-ergo-blockchain/4429/2)
