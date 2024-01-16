@@ -58,11 +58,15 @@ locally or on its peer nodes. This ensures an efficient distribution of tasks an
 
 ### Services
 
-A service is software that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function. Could be called "bots" too.
+A service is software container that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function. Could be called "bots" too.
+
+Generally, nodes are run as containers (isolated processes) or virtual machines, depending on how the node in question works with the service architecture, if it supports it.
+
+>For example, a node with the architecture linux/arm64v8 can execute services with that architecture using Docker containers. If it wants to execute a windows/x86 service, it must execute it using a virtual machine. However, this is transparent to the services.
 
 <br>
 
-This architecture allows services to focus on their functionality, without worrying about the underlying infrastructure. Nodes, for their part, can efficiently manage the execution of instances, without worrying about their usefulness.
+**This architecture allows services to focus on their functionality, without worrying about the underlying infrastructure. Nodes, for their part, can efficiently manage the execution of instances, without worrying about their usefulness.**
 
 <br>
 
