@@ -182,7 +182,7 @@ Therefore, the person maintaining a node (type 1 user) doesn’t concern themsel
 <br>
 
 
-## FAQ
+## Possible Asked Questions
 
 ### How do multiple clients make requests to a specific service?
 
