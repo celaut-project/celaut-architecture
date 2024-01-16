@@ -55,11 +55,14 @@ This architecture allows services to focus on their functionality, without worry
 
 The specification of a service in CELAUT consists of three main components:
 
+
 ### Container | *BOX*
 This component defines the environment in which the service will run, including the hardware and software requirements. It specifies the architecture, entry point, filesystem, and environment variables of the service.
 
+
 ### Interface | *API*
 This component defines how the service can be interacted with, including the ports it listens on, the communication protocols it supports, and the methods it defines. It specifies the application protocol, the slots, and the cost function (optional).
+
 
 ### Network | *NET*
 ~~This component defines the database that the service can provide, including the class diagram and the consensus protocol (optional). It specifies the classes and the relation definitions.~~
@@ -170,6 +173,7 @@ To create a web service that can be connected to a frontend in a browser, a new 
 
 <br>
 
+
 ### Multiple instances cannot share dependencies
 
 The nature of the network creates a hierarchy of service instances distributed across the nodes of the same. 
@@ -178,6 +182,7 @@ This means that when an instance (parent) requests an instance of another servic
 In this way, if the parent is stopped, the node where its child is running can stop it. If it were not so, a node would not know which instances are in a 'zombie' state since none of its clients (parent instances) would be responsible.
 
 <br>
+
 
 ### Why include the entire filesystem in the specification of a service?
 
@@ -190,6 +195,7 @@ does.
 >Using Dockerfiles to define a service would not be possible to verify the authenticity of the container, since the Dockerfile defines how to build the container and, generally, are download instructions from central repositories, and they can change the result over the time. A node can accept a specification that uses Dockerfiles, but it would not be in line with the principles of the architecture.
 
 <br>
+
 
 ### Hash Algorithm Identification
 
@@ -243,7 +249,21 @@ Other way to solve the problem could be
 But it needs to have a consensus to say what algorithms has what identifier codes.
 
 
-### How does CELAUT's peer-to-peer network architecture relate to orchestrators like Kubernetes or Apache Mesos?
+### How does CELAUT's peer-to-peer network architecture relate to orchestrators like Kubernetes or  Apache Mesos ?
+
+The primary distinction lies in the hierarchical structure of both 
+[Kubernetes](https://kubernetes.io/es/docs/concepts/architecture/nodes/)  and 
+[Apache Mesos](https://mesos.apache.org/documentation/latest/architecture/)
+, where a single master node oversees a collection of subordinate nodes, or minions. 
+In contrast, CELAUT employs a decentralized approach, where no individual node holds authority over another, fostering a trustless environment that can support a vast and globally distributed computational network.
+
+CELAUT offers several integration and utilization possibilities with existing systems:
+
+- Evolving them so that the node operates as a master node in these systems and treats the other peers as subordinate minions (even if they are not, meaning compensating them).
+
+- Operating as standalone services within the distributed network, assuming responsibility for load balancing and coordinating other child services in a centralized fashion. This role can prove beneficial for applications requiring centralized control and orchestration.
+
+- Employing them within traditional centralized server environments, recognizing that CELAUT's inherent trustlessness may not be essential when all nodes are under the control of a single organization. In such scenarios, the master node assumes the responsibility of connecting to external nodes via the CELAUT architecture.
 
 <br>
 <br>
