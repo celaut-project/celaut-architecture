@@ -38,7 +38,7 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 ### Nodes
 
-A node is a computer on the network that can find and communicate with other nodes. It has the ability to share, build, and orchestrate services between them.
+A *node* is a **computer** on the network that can find and communicate with other nodes. It has the ability to share, build, and orchestrate services between them.
 
 #### Node responsabilities:
 
@@ -58,11 +58,15 @@ locally or on its peer nodes. This ensures an efficient distribution of tasks an
 
 ### Services
 
-A service is software container that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function. Could be called "bots" too.
+A *service* is **deterministic** software container that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function. Could be called "bots" too.
 
 Generally, nodes are run as containers (isolated processes) or virtual machines, depending on how the node in question works with the service architecture, if it supports it.
 
 >For example, a node with the architecture linux/arm64v8 can execute services with that architecture using Docker containers. If it wants to execute a windows/x86 service, it must execute it using a virtual machine. However, this is transparent to the services.
+
+A characteristic property of services is that they can request the node that is executing them to execute another service, that is, a child service. This allows for certain very interesting software patterns.
+
+>An implementation example of a service that classifies and test other services: [Sort sat solver](https://github.com/celaut-project/sort-sat-solver/tree/master)
 
 <br>
 
