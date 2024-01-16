@@ -170,6 +170,15 @@ To create a web service that can be connected to a frontend in a browser, a new 
 
 <br>
 
+### Multiple instances cannot share dependencies
+
+The nature of the network creates a hierarchy of service instances distributed across the nodes of the same. 
+This means that when an instance (parent) requests an instance of another service (child or dependency), the latter will become dependent on the former, with the parent assuming the right to decide when the child should be stopped and the responsibility for its resource consumption (in case a node tracks the consumption of each instance, it must take into account that of its dependencies). 
+
+In this way, if the parent is stopped, the node where its child is running can stop it. If it were not so, a node would not know which instances are in a 'zombie' state since none of its clients (parent instances) would be responsible.
+
+<br>
+
 
 ## Links
 
