@@ -160,12 +160,25 @@ Therefore, the person maintaining a node (type 1 user) doesn’t concern themsel
 
 ## FAQ
 
+### How do multiple clients make requests to a specific service?
+
+Based on the architecture developed earlier, if a client wants to use a service, it requests the creation of an instance of it on a node. Therefore, if n clients want to use the service, n instances of it will be needed. In the end, an instance of a service, a container, is nothing more than an isolated thread. Therefore, the client/server paradigm is altered when talking about services on a trustless distributed system. Instead of one server serving multiple clients, a client requests the deployment of a service. In terms of performance, there should not be a big difference between one scheme and another, since the centralized server ends up executing n threads for n client requests. In distributed services, these threads are isolated (<span style="color: gray">which can be a negative point regarding shared memory usage, but this is solved with some other patterns</span>) and are distributed among the nodes in the network.
+
+To create a web service that can be connected to a frontend in a browser, a new service is required to handle incoming requests from clients and deploy and use the classification service. This service, as shown in Figure 15, can be understood as a bridge between the "traditional web" and a distributed service network.
+
+![Figure 15](assets/figure-15.png)
 
 <br>
 
 
-## More
-
-[Roadmap](https://raw.githubusercontent.com/celaut-project/celaut-architecture/master/roadmap.svg?token=GHSAT0AAAAAACL2W7JRL36HQEFAY3MJ7CXIZNGKL7A)
+## Links
 
 [Ergo-forum conversation](https://www.ergoforum.org/t/artifical-economic-intelligence-on-ergo-blockchain/4429/2)
+
+
+<br>
+
+
+## Roadmap
+
+![Roadmap](assets/roadmap.svg)
