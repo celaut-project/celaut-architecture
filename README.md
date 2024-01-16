@@ -29,7 +29,7 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 A node is a computer on the network that can find and communicate with other nodes. It has the ability to share, build, and orchestrate services between them.
 
-Node responsabilities:
+#### Node responsabilities:
 
 1. **Service Execution**: Handles service instance requests, balancing the load between running them 
 locally or on its peer nodes. This ensures an efficient distribution of tasks and resources across the network, optimizing system performance.
