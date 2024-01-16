@@ -23,7 +23,9 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 ## Principles
 
-
+1. Descentralization
+2. Simplicity
+3. Determinism
 
 >In addition to these, the architecture is in line with the [Ergo Manifesto](https://ergoplatform.org/en/blog/2021-04-26-the-ergo-manifesto), despite not being limited to the use of this platform.
 
@@ -286,8 +288,11 @@ CELAUT offers several integration and utilization possibilities with existing sy
 
 ## Links
 
-[Ergo-forum conversation](https://www.ergoforum.org/t/artifical-economic-intelligence-on-ergo-blockchain/4429/2)
+[Proof of Concept: CELAUT over IPFS, Feb '21](https://discuss.ipfs.tech/t/proof-of-concept-interplanetary-service-system/10245)
 
+[Ergo-forum conversation, Aug '23](https://www.ergoforum.org/t/artifical-economic-intelligence-on-ergo-blockchain/4429/2)
+
+>IPFS or Ergo are not platforms on which the architecture is based, although both are aligned with the CELAUT principles.
 
 <br>
 
