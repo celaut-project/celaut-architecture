@@ -2,6 +2,7 @@
 
 <br>
 
+
 ## Context
 In 1970, the British mathematician John Horton Conway introduced a cellular automaton called "The Game of Life." A cellular automaton serves as a mathematical and computational model for a dynamic system that evolves in discrete steps.
 
@@ -18,6 +19,7 @@ The computer revolution of recent decades provides us with the ability to simula
 In a cellular automaton, the fewer and/or less complex the rules governing agent interactions, the broader the spectrum of complexity the automaton can achieve. In other words, more rules lead to greater limitations.
 
 <br>
+
 
 ## Definition
 
@@ -45,6 +47,7 @@ A service is software that performs a specific task, whose specification is foun
 This architecture allows services to focus on their functionality, without worrying about the underlying infrastructure. Nodes, for their part, can efficiently manage the execution of instances, without worrying about their usefulness.
 
 <br>
+
 
 ## Why is this necessary
 
@@ -91,17 +94,65 @@ In contra part of this two options, CELAUT allows to take the advangates of the 
 
 - Service developers cannot control, modify, or extract data from the service. They do not control the nodes that distribute and run it. However, they may be incentivized to create it.
 
+<br>
+
+
+## Different types of role users on the system
+
+As users, we can play three types of roles:
+
+- Node maintainer (similar to someone maintaining a miner in a blockchain).
+- Service developer. These can be run by anyone on any node (any compatible node, in terms of architecture, etc.).
+- Users who launch services on nodes.
+
+Therefore, the person maintaining a node (type 1 user) doesn’t concern themselves with whether it’s mining PoW, running a trading bot, analyzing a DNA sequence, or whatever the services it runs do. They simply execute the services that type 3 users request, in exchange for proof of payment (on a blockchain or whatever method of payment is accepted). The developer (type 2 user) only needs to send it to one or multiple nodes, and these will handle distributing the service among others and/or uploading it to a reputation system[¹],  so that users (or other services) know if use it and when and why to use it.
+
+>This is a simple view of the system, by introducing more complexity the amount of possible user roles could also grow
+
+[¹]: An implementation of a reputation system on the Ergo blockchain is [this](https://celaut-project.github.io/ergo-reputation-system).
 
 <br>
 
+
+##  How a service is specified?
+
+<br>
+
+The specification of a service in CELAUT consists of three main components:
+
+### Container
+This component defines the environment in which the service will run, including the hardware and software requirements. It specifies the architecture, entry point, filesystem, and environment variables of the service.
+
+### API
+This component defines how the service can be interacted with, including the ports it listens on, the communication protocols it supports, and the methods it defines. It specifies the application protocol, the slots, and the cost function (optional).
+
+### Ledger
+This component defines the database that the service can provide, including the class diagram and the consensus protocol (optional). It specifies the classes and the relation definitions.
+
+<br>
+
+>The specification of a service is stored in a binary file that can be deployed and executed on any node in the CELAUT network. 
+>The node will load the service from the binary file and provide it with the resources it needs to run. The service will then start listening for requests and respond to them according to its API specification.
+
+
+>The specification of a service is a key part of the CELAUT architecture, as it allows services to be deployed and executed in a consistent and predictable manner. 
+
+>The specification of a service also allows for services to be shared and reused across the network, which can help to reduce development costs and improve the overall efficiency of the system.
+
+
+[Proto3 implementation](https://github.com/celaut-project/node-driver/blob/main/src/node_driver/gateway/protos/celaut.proto#L66)
+
+<br>
+
+
+## FAQ
+
+
+<br>
+
+
 ## More
 
-[Roles](roles.md)
-
-[Service specification](service_specification.md)
-
-[FAQ](faq.md)
-
-[Roadmap](roadmap.svg)
+[Roadmap](https://raw.githubusercontent.com/celaut-project/celaut-architecture/master/roadmap.svg?token=GHSAT0AAAAAACL2W7JRL36HQEFAY3MJ7CXIZNGKL7A)
 
 [Ergo-forum conversation](https://www.ergoforum.org/t/artifical-economic-intelligence-on-ergo-blockchain/4429/2)
