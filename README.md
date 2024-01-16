@@ -49,6 +49,50 @@ This architecture allows services to focus on their functionality, without worry
 <br>
 
 
+##  How a service is specified?
+
+<br>
+
+The specification of a service in CELAUT consists of three main components:
+
+### Container | *BOX*
+This component defines the environment in which the service will run, including the hardware and software requirements. It specifies the architecture, entry point, filesystem, and environment variables of the service.
+
+### Interface | *API*
+This component defines how the service can be interacted with, including the ports it listens on, the communication protocols it supports, and the methods it defines. It specifies the application protocol, the slots, and the cost function (optional).
+
+### Network | *NET*
+~~This component defines the database that the service can provide, including the class diagram and the consensus protocol (optional). It specifies the classes and the relation definitions.~~
+
+<br><br>
+
+The specification of a service is a key part of the CELAUT architecture, as it allows services to be deployed and executed in a consistent and predictable manner. 
+
+It also allows for services to be shared and reused across the network, which can help to reduce development costs and improve the overall efficiency of the system.
+
+<br>
+
+The node will load the service from the binary and provide it with the resources it needs to run.
+
+<br>
+
+>There is no single way to define a service 
+
+For example, [Proto3 implementation](https://github.com/celaut-project/node-driver/blob/main/src/node_driver/gateway/protos/celaut.proto#L66) is one of many possible variations.
+
+<br>
+
+>Not all nodes will accept all possible variations of a service specification 
+
+<span style="color: gray;">
+For example, node A understands a specific proto3 specification and one in JSON. Another node B understands the JSON specification and another in JSON+zip file system. Both nodes can transmit services of the specification they have in common, in this case, JSON.
+</span>
+
+
+
+<br>
+
+
 ## Why is this necessary
 
 CELAUT intend to solve is precisely the separation between the “*how to solve a problem*” and the “*where and who solve it*”.
@@ -110,50 +154,6 @@ Therefore, the person maintaining a node (type 1 user) doesn’t concern themsel
 >This is a simple view of the system, by introducing more complexity the amount of possible user roles could also grow
 
 [¹]: An implementation of a reputation system on the Ergo blockchain is [this](https://celaut-project.github.io/ergo-reputation-system).
-
-<br>
-
-
-##  How a service is specified?
-
-<br>
-
-The specification of a service in CELAUT consists of three main components:
-
-### Container | *BOX*
-This component defines the environment in which the service will run, including the hardware and software requirements. It specifies the architecture, entry point, filesystem, and environment variables of the service.
-
-### Interface | *API*
-This component defines how the service can be interacted with, including the ports it listens on, the communication protocols it supports, and the methods it defines. It specifies the application protocol, the slots, and the cost function (optional).
-
-### Network | *NET*
-~~This component defines the database that the service can provide, including the class diagram and the consensus protocol (optional). It specifies the classes and the relation definitions.~~
-
-<br><br>
-
-The specification of a service is a key part of the CELAUT architecture, as it allows services to be deployed and executed in a consistent and predictable manner. 
-
-It also allows for services to be shared and reused across the network, which can help to reduce development costs and improve the overall efficiency of the system.
-
-<br>
-
-The node will load the service from the binary and provide it with the resources it needs to run.
-
-<br>
-
->There is no single way to define a service 
-
-For example, [Proto3 implementation](https://github.com/celaut-project/node-driver/blob/main/src/node_driver/gateway/protos/celaut.proto#L66) is one of many possible variations.
-
-<br>
-
->Not all nodes will accept all possible variations of a service specification 
-
-<span style="color: gray;">
-For example, node A understands a specific proto3 specification and one in JSON. Another node B understands the JSON specification and another in JSON+zip file system. Both nodes can transmit services of the specification they have in common, in this case, JSON.
-</span>
-
-
 
 <br>
 
