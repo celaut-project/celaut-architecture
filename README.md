@@ -95,19 +95,14 @@ It also allows for services to be shared and reused across the network, which ca
 
 The node will load the service from the binary and provide it with the resources it needs to run.
 
-<br>
-
->There is no single way to define a service 
-
+There is no single way to define a service.
 For example, [Proto3 implementation](https://github.com/celaut-project/node-driver/blob/main/src/node_driver/gateway/protos/celaut.proto#L66) is one of many possible variations.
 
 <br>
 
->Not all nodes will accept all possible variations of a service specification 
+Not all nodes will accept all possible variations of a service specification.
 
-<span style="color: gray;">
-For example, node A understands a specific proto3 specification and one in JSON. Another node B understands the JSON specification and another in JSON+zip file system. Both nodes can transmit services of the specification they have in common, in this case, JSON.
-</span>
+>For example, node A understands a specific proto3 specification and one in JSON. Another node B understands the JSON specification and another in JSON+zip file system. Both nodes can transmit services of the specification they have in common, in this case, JSON.
 
 
 
