@@ -23,6 +23,8 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 ## Principles
 
+~~In process ..... Each one must be developed~~
+
 1. Descentralization
 2. Simplicity
 3. Determinism
