@@ -289,6 +289,42 @@ CELAUT offers several integration and utilization possibilities with existing sy
 <br>
 <br>
 
+## Roadmap
+
+This section covers the past and future development of the project by the initial development team (it is updated over time)
+
+[Link to the roadmap](roadmap.md)
+
+<br>
+
+
+## Use case diagrams
+
+This section presents several use diagrams, in order to show the reader the nature of the architecture with greater clarity.
+
+~~This section is still under development.~~
+
+- [Execution of an instance]()
+- [Load balancing]()
+- [Node handshake]()
+
+<br>
+
+
+## Design patterns
+
+Design patterns are common solutions to common problems in software development. They are a way to share knowledge and experience among developers.
+
+
+~~This section is still under development.~~
+
+- [Classifier pattern]()
+- [Mirror pattern]()
+- [Genetic pattern]()
+
+<br>
+
+
 ## Links
 
 [Proof of Concept: CELAUT over IPFS, Feb '21](https://discuss.ipfs.tech/t/proof-of-concept-interplanetary-service-system/10245)
@@ -298,8 +334,3 @@ CELAUT offers several integration and utilization possibilities with existing sy
 >IPFS or Ergo are not platforms on which the architecture is based, although both are aligned with the CELAUT principles.
 
 <br>
-
-
-## Roadmap
-
-![Roadmap](assets/1a0e-roadmap.excalidraw.svg)
