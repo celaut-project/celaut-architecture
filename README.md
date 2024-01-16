@@ -29,14 +29,23 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 A node is a computer on the network that can find and communicate with other nodes. It has the ability to share, build, and orchestrate services between them.
 
-A node must:
+Node responsabilities:
 
-* Provide an interface for services to communicate with.
-* Provide the address to which the service will make its requests.
-* Load the components of a new instance from a binary file in the root of the service's file system.
-* If requesting an instance from another node, ensure that the requester has access to the address it provides to communicate with the dependency.
+1. **Service Execution**: Handles service instance requests, balancing the load between running them 
+locally or on its peer nodes. This ensures an efficient distribution of tasks and resources across the network, optimizing system performance.
 
-A node can choose whether to build a new instance locally or request it from another node.
+2. **Communication Interface**: Provides a robust and flexible interface that enables the services that it executes to communicate seamlessly with it, ensuring efficient data exchange and coordination.
+
+3. **Service Instance Construction**: Whether it's constructing a service instance locally or requesting it from another node, the node handles the intricate task of service instantiation, making it a hassle-free process for users (or bots).
+
+4. **Address and Token Provisioning**: Offers a streamlined process for obtaining the communication address and authentication token of a service required for interaction, enhancing security and accessibility.
+
+5. **Dependency Management**: Takes care of ensuring that services have access to the addresses of their dependencies, irrespective of the node on which they are executed, promoting a smooth and efficient service ecosystem.
+
+>An implementation of a node using Python3 (and progressively Rust): [Nodo](https://github.com/celaut-project/nodo)
+
+<br>
+
 
 ### Services
 
