@@ -181,7 +181,9 @@ In this way, if the parent is stopped, the node where its child is running can s
 
 ### Why include the entire filesystem in the specification of a service?
 
-The specification of a service must define it completely to avoid redundancy between different services. This can lead to problems such as the size of the specification, but these problems can be solved in a higher abstraction layer, such as the [gRPCbb protocol]("https://github.com/celaut-project/grpc-bb#using-blocks-buffer-containers") does.
+The specification of a service must define it completely to avoid redundancy between different services. This can lead to problems such as the size of the specification, but these problems can be solved in a higher abstraction layer, such as the 
+[gRPCbb protocol]("https://github.com/celaut-project/grpc-bb#using-blocks-buffer-containers")
+does.
 
 >Using Dockerfiles to define a service would not be possible to verify the authenticity of the container, since the Dockerfile defines how to build the container and, generally, are download instructions from central repositories, and they can change the result over the time. A node can accept a specification that uses Dockerfiles, but it would not be in line with the principles of the architecture.
 
