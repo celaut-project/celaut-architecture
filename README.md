@@ -25,7 +25,7 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 
 
->In addition to these, the architecture is in line with the [Ergo Manifesto.](https://ergoplatform.org/en/blog/2021-04-26-the-ergo-manifesto)
+>In addition to these, the architecture is in line with the [Ergo Manifesto](https://ergoplatform.org/en/blog/2021-04-26-the-ergo-manifesto), despite not being limited to the use of this platform.
 
 <br>
 
