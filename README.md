@@ -300,13 +300,11 @@ This section covers the past and future development of the project by the initia
 <br>
 
 
-## Use case diagrams
+## UML diagrams
 
 This section presents several use diagrams, in order to show the reader the nature of the architecture with greater clarity.
 
-~~This section is still under development.~~
-
-- [Execution of an instance]()
+- [Execution of a service](use_case_diagrams/execution_of_a_service.md)
 - [Load balancing]()
 - [Node handshake]()
 
