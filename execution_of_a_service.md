@@ -1,9 +1,9 @@
-[*<-- Back to main page*](../README.md#uml-diagrams)
+[*<-- Back to main page*](README.md#system-behavior)
 
 
 ### Sequence diagram of the execution of a service instance
 
-![Use case diagram](../assets/e29d99_service_execution_diagram.excalidraw.svg)*__Figure e29__: Sequence diagram of the execution of a service instance*
+![Use case diagram](assets/e29d99_service_execution_diagram.excalidraw.svg)*__Figure e29__: Sequence diagram of the execution of a service instance*
 
 <br>
 

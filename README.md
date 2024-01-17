@@ -300,11 +300,12 @@ This section covers the past and future development of the project by the initia
 <br>
 
 
-## UML diagrams
+## System behavior
 
-This section presents several use diagrams, in order to show the reader the nature of the architecture with greater clarity.
+This section describes the system behavior, which includes interactions between the parts of the system, 
+in order to show the nature of the architecture with greater clarity.
 
-- [Execution of a service](use_case_diagrams/execution_of_a_service.md)
+- [Execution of a service](execution_of_a_service.md)
 - [Load balancing]()
 - [Node handshake]()
 
