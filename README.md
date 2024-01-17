@@ -184,6 +184,19 @@ Therefore, the person maintaining a node (type 1 user) doesn’t concern themsel
 <br>
 
 
+## Trust systems
+
+### Payment systems
+
+
+<br>
+
+### Reputation systems
+
+
+<br>
+
+
 ## Possible Asked Questions
 
 ### How do multiple clients make requests to a specific service?
