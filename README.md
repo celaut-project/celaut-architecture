@@ -288,7 +288,7 @@ But it needs to have a consensus to say what algorithms has what identifier code
 ### How does CELAUT's peer-to-peer network architecture relate to orchestrators like Kubernetes or  Apache Mesos ?
 
 The primary distinction lies in the hierarchical structure of both 
-[Kubernetes](https://kubernetes.io/es/docs/concepts/architecture/nodes/)  and 
+[Kubernetes](https://kubernetes.io/docs/concepts/architecture/nodes/)  and 
 [Apache Mesos](https://mesos.apache.org/documentation/latest/architecture/)
 , where a single master node oversees a collection of subordinate nodes, or minions. 
 In contrast, CELAUT employs a decentralized approach, where no individual node holds authority over another, fostering a trustless environment that can support a vast and globally distributed computational network.
