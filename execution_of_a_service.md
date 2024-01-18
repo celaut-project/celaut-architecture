@@ -35,6 +35,6 @@ The following interactions occur during the sequence:
 
 8. The node stops the container of the dependency and removes it from the registry.
 
->The *StartService()* and *StopService()* methods are reference methods, but can vary between implementations. The node interface, used by clients and local services (services that run the node) to make requests and control resources and dependencies, is provided by the node to new clients or local services.
+>The *StartService()* and *StopService()* methods are reference methods, but can vary between node implementations. The node interface, used by clients and local services (services that run the node) to make requests and control resources and dependencies, is provided by the node to new clients or local services.
 
 >The *__ config __* file indicates the configuration of each service (environment variables, node interface, etc.), which depends on each service, since its schema is indicated in the specification of each one. The node may have the ability to write in one or more schemas, and if it is not compatible, it can either decide not to instantiate the service or use a translation service.
