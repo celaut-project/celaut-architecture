@@ -21,7 +21,14 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 <br>
 
 
-## Principles
+## Definition
+
+*CELAUT is a set of simple rules for software design and distribution.*
+
+<br>
+
+
+### Principles
 
 ~~In process ..... Each one must be developed~~
 
@@ -33,10 +40,7 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 <br>
 
-
-## Definition
-
-*CELAUT is a set of simple rules for software design and distribution. It is based on two main elements: nodes and services.*
+*CELAUT is based on two main elements: nodes and services.*
 
 ### Nodes
 
@@ -114,6 +118,34 @@ Not all nodes will accept all possible variations of a service specification.
 
 >For example, node A understands a specific proto3 specification and one in JSON. Another node B understands the JSON specification and another in JSON+zip file system. Both nodes can transmit services of the specification they have in common, in this case, JSON.
 
+<br>
+
+
+## Different types of role users on the system
+
+As users, we can play three types of roles:
+
+- Node maintainer (similar to someone maintaining a miner in a blockchain).
+- Service developer. These can be run by anyone on any node (any compatible node, in terms of architecture, etc.).
+- Users who launch services on nodes.
+
+Therefore, the person maintaining a node (type 1 user) doesn’t concern themselves with whether it’s mining PoW, running a trading bot, analyzing a DNA sequence, or whatever the services it runs do. They simply execute the services that type 3 users request, in exchange for proof of payment (on a blockchain or whatever method of payment is accepted). The developer (type 2 user) only needs to send it to one or multiple nodes, and these will handle distributing the service among others and/or uploading it to a reputation system[¹],  so that users (or other services) know if use it and when and why to use it.
+
+>This is a simple view of the system, by introducing more complexity the amount of possible user roles could also grow
+
+[¹]: An implementation of a reputation system on the Ergo blockchain is [this](https://celaut-project.github.io/ergo-reputation-system).
+
+<br>
+
+
+## Trust systems
+
+### Payment systems
+
+
+<br>
+
+### Reputation systems
 
 
 <br>
@@ -167,32 +199,28 @@ In contra part of this two options, CELAUT allows to take the advangates of the 
 <br>
 
 
-## Different types of role users on the system
+## System behavior
 
-As users, we can play three types of roles:
+This section describes the system behavior, which includes interactions between the parts of the system, 
+in order to show the nature of the architecture with greater clarity.
 
-- Node maintainer (similar to someone maintaining a miner in a blockchain).
-- Service developer. These can be run by anyone on any node (any compatible node, in terms of architecture, etc.).
-- Users who launch services on nodes.
-
-Therefore, the person maintaining a node (type 1 user) doesn’t concern themselves with whether it’s mining PoW, running a trading bot, analyzing a DNA sequence, or whatever the services it runs do. They simply execute the services that type 3 users request, in exchange for proof of payment (on a blockchain or whatever method of payment is accepted). The developer (type 2 user) only needs to send it to one or multiple nodes, and these will handle distributing the service among others and/or uploading it to a reputation system[¹],  so that users (or other services) know if use it and when and why to use it.
-
->This is a simple view of the system, by introducing more complexity the amount of possible user roles could also grow
-
-[¹]: An implementation of a reputation system on the Ergo blockchain is [this](https://celaut-project.github.io/ergo-reputation-system).
+- [Execution of a service](execution_of_a_service.md)
+- [Load balancing]()
+- [Node handshake]()
 
 <br>
 
 
-## Trust systems
+## Design patterns
 
-### Payment systems
+Design patterns are common solutions to common problems in software development. They are a way to share knowledge and experience among developers.
 
 
-<br>
+~~This section is still under development.~~
 
-### Reputation systems
-
+- [Classifier pattern]()
+- [Mirror pattern]()
+- [Genetic pattern]()
 
 <br>
 
@@ -309,32 +337,6 @@ CELAUT offers several integration and utilization possibilities with existing sy
 This section covers the past and future development of the project by the initial development team (it is updated over time)
 
 [Link to the roadmap](roadmap.md)
-
-<br>
-
-
-## System behavior
-
-This section describes the system behavior, which includes interactions between the parts of the system, 
-in order to show the nature of the architecture with greater clarity.
-
-- [Execution of a service](execution_of_a_service.md)
-- [Load balancing]()
-- [Node handshake]()
-
-<br>
-
-
-## Design patterns
-
-Design patterns are common solutions to common problems in software development. They are a way to share knowledge and experience among developers.
-
-
-~~This section is still under development.~~
-
-- [Classifier pattern]()
-- [Mirror pattern]()
-- [Genetic pattern]()
 
 <br>
 
