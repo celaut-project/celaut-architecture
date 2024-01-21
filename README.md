@@ -140,10 +140,47 @@ Therefore, the person maintaining a node (type 1 user) doesn’t concern themsel
 
 ## Trust systems
 
+In CELAUT, the different parts of the system, nodes and services, do not trust each other, therefore it is a trustless system. This is why it is unlikely that a node will execute services for free, or that a service will not work without making a payment in a contract and receiving proof of it (although obviously they can do it if they want, in the case of services it is economically feasible because they have a marginal cost of zero). 
+<br>However, to allow interaction between these parts without trust between them, contracts, social contracts (in a society of nodes and services), are needed to transmit value and assign reputation to each part. Therefore, we have two types of systems (from a relatively abstract point of view): payment systems and reputation systems.
+
+> A possible strategy for a node is to offer the execution of services without exchanging value at the beginning, to increase its reputation and, when it has reputation from others, start to increase its cost.
+
+> Unlike nodes, the nature of services is to have a marginal cost of zero, this means that they do not have a limit on the number of simultaneous units in which they are executed (since the cost of executing them falls on the nodes), so it is quite likely that many services will start with a cost of zero to gain reputation, require a cost when they have reputation and remain competitive, and return to a cost of zero when they cease to be competitive.
+
+
 ### Payment systems
 
+Payment systems allow for the transfer of value between entities in CELAUT. Here are some possible types:
+
+#### License Smart Contracts
+
+A contract system that allows for the issuance of usage licenses for services and nodes, where Ledger is the network where truth is agreed upon. In this way, if A wants to execute a method of B, it will check its contract, execute the defined command (connecting to the Ledger), and the Ledger's contract will issue a license, which A will send to B to enable it to execute the desired method.
+
+There are four distinct types of licenses based on two different classifications. On one hand, whether the license is elastic or static, and on the other, whether it is interactive or non-interactive.
+
+- **Elastic licenses** are those that allow for the restriction of their usage based on certain parameters (number of requests, time, methods, environment variables, etc.).
+
+- **Static licenses** are those that do not restrict usage. B knows the license keys, and the contract provides the license without being able to limit its usage.
+
+- **Interactive licenses** require B to connect to the Ledger to verify the validity of the provided license.
+
+- **Non-interactive** licenses do not require B to connect to the Ledger to verify the validity of the provided license.
 
 <br>
+
+This results in the four types of licenses:
+
+- Interactive static (Very straightforward - Not very useful)
+- Non-interactive static (Better for services)
+- Interactive elastic (Better for nodes)
+- Non-interactive elastic (Quite complex - Versatile)
+
+<br>
+
+> Ledgers can be public and permissionless networks like Bitcoin or Ergo, or private closed platforms like Stripe. The only requirement is that all participants must support them.
+
+<br>
+
 
 ### Reputation systems
 
