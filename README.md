@@ -205,7 +205,7 @@ This section describes the system behavior, which includes interactions between 
 in order to show the nature of the architecture with greater clarity.
 
 - [Execution of a service](execution_of_a_service.md)
-- [Load balancing]()
+- [Service load balancing](service_balancer.md)
 - [Node handshake]()
 
 <br>
