@@ -55,7 +55,7 @@ locally or on its peer nodes. This ensures an efficient distribution of tasks an
 
 4. **Dependency Management**: Takes care of ensuring that services have access to the addresses of their dependencies, irrespective of the node on which they are executed, promoting a smooth and efficient service ecosystem.
 
->An implementation of a node using Python3: [Nodo](https://github.com/celaut-project/nodo)
+>An implementation of a node using Python3 and Rust: [Nodo](https://github.com/celaut-project/nodo)
 
 <br>
 
