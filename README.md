@@ -277,8 +277,6 @@ in order to show the nature of the architecture with greater clarity.
 Design patterns are common solutions to common problems in software development. They are a way to share knowledge and experience among developers.
 
 
-~~This section is still under development.~~
-
 - [Classifier pattern]()
 - [Mirror pattern]()
 - [Genetic pattern]()
