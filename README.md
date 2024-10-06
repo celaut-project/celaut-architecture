@@ -195,6 +195,21 @@ This results in the four types of licenses:
 
 ### Reputation systems
 
+Reputation systems allow users, nodes, and services to create a social ecosystem upon which to make decisions. For nodes, they need to know which peers they can trust to request the execution of services. 
+For users, who execute services, it helps them determine which services will perform best for the task they wish to carry out.
+
+In Celaut, reputation is represented as records on Ledgers, which represent an opinion.
+
+In the case of services, their deterministic nature provides a different perspective on their reputation compared to nodes. 
+A reputation proof (a record) published some time ago may hold the same value as a current one regarding a service (this is true when the service does not interact with networks, which is the default form of a service, completely isolated). 
+If it does interact with any network, its reputation may depend on the reputation of the networks it connects to, which does not have that deterministic property, as it can change over time. This is because the service itself has not changed.
+
+However, the reputation of a node is more valuable the more recent it is, as its behavior can vary over time. 
+When nodes present themselves to each other, they show proofs of their reputation, and others may opine non-consensually on whether they are more or less trustworthy.
+
+Each node, service, or other type of actor in a reputation system trusts various sources to varying degrees, and these sources, in turn, trust different sources, nodes, services, or other entities to varying degrees. Thus, when a certain actor is presented with an unknown entity, they will check the opinions of their trusted sources.
+
+For a more specific understanding of how a reputation system works, you can read: [Sigma Reputation Panel Documentation](https://github.com/reputation-systems/sigma-reputation-panel/blob/master/README.md)
 
 <br>
 
