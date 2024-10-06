@@ -30,8 +30,6 @@ In a cellular automaton, the fewer and/or less complex the rules governing agent
 
 ### Principles
 
-~~In process ..... Each one must be developed~~
-
 1. Descentralization
 2. Simplicity
 3. Determinism
@@ -70,7 +68,7 @@ Generally, nodes are run as containers (isolated processes) or virtual machines,
 
 A characteristic property of services is that they can request the node that is executing them to execute another service, that is, a child service. This allows for certain very interesting software patterns.
 
->An implementation example of a service that classifies and test other services: [Sort sat solver](https://github.com/celaut-project/sort-sat-solver/tree/master)
+>An implementation example of a service that classifies and test other services: [Sort sat solver](https://github.com/copa-ai/sort-sat-solver)
 
 <br>
 
@@ -95,7 +93,6 @@ This component defines how the service can be interacted with, including the por
 
 
 ### Network | *NET*
-~~This component defines the database that the service can provide, including the class diagram and the consensus protocol (optional). It specifies the classes and the relation definitions.~~
 
 <br><br>
 
@@ -108,7 +105,7 @@ It also allows for services to be shared and reused across the network, which ca
 The node will load the service from the binary and provide it with the resources it needs to run.
 
 There is no single way to define a service.
-For example, [Proto3 implementation](https://github.com/celaut-project/node-driver/blob/main/src/node_driver/gateway/protos/celaut.proto#L66) is one of many possible variations.
+For example, [Proto3 implementation](https://github.com/celaut-project/service-lib/blob/master/node-driver/src/node_driver/gateway/protos/celaut.proto#L66) is one of many possible variations.
 
 <br>
 
@@ -130,7 +127,7 @@ Therefore, the person maintaining a node (type 1 user) doesn’t concern themsel
 
 >This is a simple view of the system, by introducing more complexity the amount of possible user roles could also grow
 
-[¹]: An implementation of a reputation system on the Ergo blockchain is [this](https://celaut-project.github.io/ergo-reputation-system).
+[¹]: An implementation of a reputation system on the Ergo blockchain is [this](https://reputation-systems.github.io/sigma-reputation-panel/).
 
 <br>
 
