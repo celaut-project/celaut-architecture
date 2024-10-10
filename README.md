@@ -4,9 +4,9 @@
 
 
 ## Context
-In 1970, the mathematician John Horton Conway introduced a cellular automaton called "The Game of Life." A cellular automaton serves as a mathematical and computational model for a dynamic system that evolves in discrete steps.
+In the 1940s, mathematician John von Neumann, in collaboration with Stanislaw Ulam, introduced the concept of cellular automata. Their initial work sought to create a mathematical model for self-replicating systems, laying the groundwork for later explorations of how simple rules could lead to complex behaviors. Building on this foundation, in 1970, mathematician John Horton Conway introduced a well-known cellular automaton called "The Game of Life." A cellular automaton serves as a mathematical and computational model for a dynamic system that evolves in discrete steps.
 
-The Game of Life suggests that, through a set of simple rules, complex structures can emerge. This system consists of a group of agents (or cells) that occupy a space and follow rules that dictate their interactions with other agents. In a way, this mirrors the evolution of a living ecosystem, constantly improving and optimizing processes without conscious intention.
+The Game of Life, like von Neumann's earlier models, suggests that complex structures can emerge from a set of simple rules. This system consists of a group of agents (or cells) that occupy a space and follow rules that dictate their interactions with other agents. In a way, this mirrors the evolution of a living ecosystem, constantly adapting and optimizing processes without conscious intention.
 
 This same principle can be applied to the capacity of competitive economic systems to enhance their processes. When a company explores new technologies to reduce costs, it does so not for the common good but to outperform rivals. Yet, unconsciously, it contributes to the common good. The market will determine whether the new approach to a task is more optimal or not.
 
