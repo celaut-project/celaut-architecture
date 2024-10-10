@@ -2,79 +2,67 @@
 
 <br>
 
+**Context**
 
-## Context
-In the 1940s, mathematician John von Neumann, in collaboration with Stanislaw Ulam, introduced the concept of cellular automata. Their initial work sought to create a mathematical model for self-replicating systems, laying the groundwork for later explorations of how simple rules could lead to complex behaviors. Building on this foundation, in 1970, mathematician John Horton Conway introduced a well-known cellular automaton called "The Game of Life." A cellular automaton serves as a mathematical and computational model for a dynamic system that evolves in discrete steps.
+In the 1940s, mathematician John von Neumann, in collaboration with Stanislaw Ulam, introduced the concept of cellular automata, creating models that demonstrated how complex behaviors could emerge from simple rules. Building on this foundation, in 1970, John Horton Conway introduced "The Game of Life," a cellular automaton that became a classic example of how a system could evolve into intricate patterns from basic interactions. These ideas offer valuable insights into how decentralized systems can achieve complexity without central control, which serves as a guiding philosophy for the design of CELAUT.
 
-The Game of Life, like von Neumann's earlier models, suggests that complex structures can emerge from a set of simple rules. This system consists of a group of agents (or cells) that occupy a space and follow rules that dictate their interactions with other agents. In a way, this mirrors the evolution of a living ecosystem, constantly adapting and optimizing processes without conscious intention.
+**Definition**
 
-This same principle can be applied to the capacity of competitive economic systems to enhance their processes. When a company explores new technologies to reduce costs, it does so not for the common good but to outperform rivals. Yet, unconsciously, it contributes to the common good. The market will determine whether the new approach to a task is more optimal or not.
+CELAUT is a set of simple rules for software design and distribution, aiming to create a robust, scalable, and adaptive system through the principles of **decentralization**, **simplicity**, and **determinism**.
 
-Competition of ideas, processes, and methods is what allows us to improve our way of life. For instance, in industrial or logistical processes, if someone devises a more efficient method, they create a company to implement it. If it proves better than the traditional method, it gains a larger market share, surpassing the previous approach.
+**Principles**
 
-However, real-world evolution is slow to observe due to the time required for tangible results. Conversely, in simulated environments, new action proposals can be observed much faster, considering more options and allowing for the immediate application of the best approach.
+1. **Decentralization**: No single point of control or failure, allowing nodes to communicate and coordinate dynamically.
+2. **Simplicity**: Minimalistic rules that reduce complexity, ensuring each component can be understood and maintained easily.
+3. **Determinism**: Services behave predictably, following defined rules that ensure reproducibility of outcomes across different nodes.
 
-The computer revolution of recent decades provides us with the ability to simulate and automate processes. A network of computers with these capabilities has been established, offering tremendous potential. Cutting-edge technologies such as artificial intelligence promise a significant improvement in our quality of life, primarily through their potential to automate tasks beyond previous imagination.
+**CELAUT Architecture: Nodes and Services**
 
-In a cellular automaton, the fewer and/or less complex the rules governing agent interactions, the broader the spectrum of complexity the automaton can achieve. In other words, more rules lead to greater limitations.
+CELAUT’s architecture is built around two core elements: **nodes** and **services**. Together, they create a distributed network where each part contributes to the overall functionality, much like the agents in a cellular automaton.
 
-<br>
+- **Nodes**: 
+    A node represents a computer or device within the CELAUT network that can communicate with other nodes and manage the execution of services. The decentralized nature of CELAUT is embodied in how nodes interact, ensuring no single point of failure or centralized control. Key responsibilities of a node include:
+  
+    1. **Service Execution**: Nodes manage service instances, deciding whether to run them locally or distribute the load across peer nodes. This ensures optimal resource utilization and performance, similar to how cells in a cellular automaton interact with their neighbors to maintain system balance.
+    
+    2. **Communication Interface**: A robust interface ensures seamless data exchange between nodes and services, allowing for effective coordination. Notably, nodes do not need to agree on a specific communication protocol beforehand, as the interface abstracts these details, allowing flexibility in interactions. This feature is further explained in detail below.
+    
+    3. **Address and Token Provisioning**: Nodes facilitate secure interactions by managing communication addresses and authentication tokens, making services easily accessible while maintaining security.
+    
+    4. **Dependency Management**: Nodes ensure that services have access to their required dependencies. These dependencies, often referred to as "child services," can run on the same or different nodes. This feature enables a parent service to access and coordinate with its child services, ensuring a smooth and efficient service ecosystem, even as services are distributed across the network.
 
+    An implementation example of a node using Python3 and Rust is **Nodo** [here](https://github.com/celaut-project/nodo).
 
-## Definition
+- **Services**:
+    A service in CELAUT is a deterministic software container designed to perform a specific task. Following the **black box** principle, services operate independently of the details of the nodes that execute them, focusing solely on their functionality. Key aspects of services include:
+  
+    - **Execution as Isolated Instances**: When a user requests a service, it is sent to a node, which runs it as an isolated process—either in a container or a virtual machine, depending on the node’s architecture. This abstraction aligns with the principle of **simplicity**, as services do not need to be aware of the execution environment.
+    
+    - **Deterministic Behavior**: Services follow predefined rules to ensure consistent outcomes. This aligns with CELAUT's emphasis on **determinism**, where given the same inputs, a service will always produce the same output, regardless of which node executes it.
+    
+    - **Hierarchical Execution**: A unique characteristic of services in CELAUT is their ability to request the execution of other services (child services) through the node, enabling complex workflows. This mirrors the emergent behaviors seen in cellular automata, where simple interactions can lead to more sophisticated patterns.
 
-*CELAUT is a set of simple rules for software design and distribution.*
+**Coordinating Incentives: Reputation and Payments**
 
-<br>
+In decentralized systems like CELAUT, coordination is not just about technical interactions—it also involves aligning the incentives of all participants to ensure that the system functions effectively. CELAUT incorporates two key mechanisms to achieve this alignment:
 
+- **Reputation Systems**: 
+    Each node and service can build a reputation based on its history of interactions. Nodes and services are incentivized to maintain high standards of reliability and quality to preserve their reputation. A strong reputation encourages other nodes and users to trust and interact with them, providing a natural incentive to behave fairly and provide quality services. This reputation mechanism creates a form of self-regulation within the network, where participants have a vested interest in maintaining their good standing.
 
-### Principles
+- **Payment Mechanisms**: 
+    Beyond reputation, cooperation between nodes and services is also facilitated through payment systems. When a node executes a service or when services interact with each other, compensation can be exchanged for resources used or tasks completed. These payments create a direct incentive for nodes to contribute resources and for services to deliver value, encouraging collaboration and fair exchanges across the network. Payment mechanisms ensure that resource allocation is efficient, allowing nodes and services to operate based on their strengths and capacities.
 
-1. Descentralization
-2. Simplicity
-3. Determinism
+These mechanisms are described in more detail later, providing the economic framework that ensures the viability of CELAUT’s decentralized approach. Similarly to how two nodes communicate without needing to agree on a specific protocol, these systems operate independently of the core architecture. The rationale behind this separation, and the way it allows flexibility and adaptability in interactions, is further explained below.
 
-<br>
+**Bridging the Conceptual and Practical**
 
-*CELAUT is based on two main elements: nodes and services.*
+The design of CELAUT reflects the underlying principles of cellular automata: simple rules at the node and service level lead to a complex, adaptive system. By decentralizing control, simplifying interactions, and ensuring deterministic behavior, CELAUT creates a flexible framework for software distribution and automation. This allows services to focus on their core functions while nodes manage the orchestration and distribution, leading to a system that can adapt and scale as new requirements emerge.
 
-### Nodes
+**Real-World Impact of CELAUT**
 
-A *node* is a **computer** on the network that can find and communicate with other nodes. It has the ability to share, build, and orchestrate services between them.
+The architecture of CELAUT enables faster iteration and experimentation, much like running simulations in a controlled environment. This makes it particularly valuable for scenarios where rapid deployment and testing of new methods are crucial. With the capabilities provided by modern computing, CELAUT can leverage these principles to simulate complex systems in ways that were previously unimaginable, offering new ways to improve efficiency and performance in various industries.
 
-#### Node responsabilities:
-
-1. **Service Execution**: Handles service instance requests, balancing the load between running them 
-locally or on its peer nodes. This ensures an efficient distribution of tasks and resources across the network, optimizing system performance.
-
-2. **Communication Interface**: Provides a robust and flexible interface that enables the services that it executes to communicate seamlessly with it, ensuring efficient data exchange and coordination.
-
-3. **Address and Token Provisioning**: Offers a streamlined process for obtaining the communication address and authentication token of a service required for interaction, enhancing security and accessibility.
-
-4. **Dependency Management**: Takes care of ensuring that services have access to the addresses of their dependencies, irrespective of the node on which they are executed, promoting a smooth and efficient service ecosystem.
-
->An implementation of a node using Python3 and Rust: [Nodo](https://github.com/celaut-project/nodo)
-
-<br>
-
-
-### Services
-
-A *service* is **deterministic** software container that performs a specific task, whose specification is found in a binary file. They follow the idea of a "black box" or a lambda function. Could be called "bots" too.
-
-When a user wants to execute a service, it sends it to a node. Every execution instance is for one client.
-
-Generally, services are run as containers (isolated processes) or virtual machines, depending on how the node in question works with the service architecture, if it supports it.
-
->For example, a node with the architecture linux/arm64v8 can execute services with that architecture using Docker containers. If it wants to execute a windows/x86 service, it must execute it using a virtual machine. However, this is transparent to the services.
-
-A characteristic property of services is that they can request the node that is executing them to execute another service, that is, a child service. This allows for certain very interesting software patterns.
-
->An implementation example of a service that classifies and test other services: [Sort sat solver](https://github.com/copa-ai/sort-sat-solver)
-
-<br>
-
-**This architecture allows services to focus on their functionality, without worrying about the underlying infrastructure. Nodes, for their part, can efficiently manage the execution of instances, without worrying about their usefulness.**
+This architecture allows services to focus on their functionality, without worrying about the underlying infrastructure. Nodes, for their part, can efficiently manage the execution of instances, without worrying about their usefulness.
 
 <br>
 
