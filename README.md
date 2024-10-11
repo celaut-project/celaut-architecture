@@ -67,28 +67,64 @@ This architecture allows services to focus on their functionality, without worry
 <br>
 
 
-##  How a service is specified?
-
-<br>
+## How a Service is Specified?
 
 The specification of a service in CELAUT consists of three main components:
 
-
 ### Container | *BOX*
-This component defines the environment in which the service will run, including the hardware and software requirements. It specifies the architecture, entry point, filesystem, and environment variables of the service.
+The **BOX** component defines the environment in which the service will run, ensuring consistency in how the service is executed across different nodes. Unlike other containerization methods, CELAUT’s BOX does not rely on external images or repositories; instead, it directly specifies the entire file structure needed to execute the service. It includes the following details:
 
+- **Architecture**: Specifies the microarchitecture of the hardware that the service is intended to run on, ensuring compatibility between the service and the executing node.
+
+- **Filesystem**: The filesystem is a comprehensive description of the service's file structure, encapsulating all the files and directories needed for the service to operate. This includes binaries, libraries, configuration files, and any other necessary resources. 
+    - **Item Branches** define the structure of the filesystem, with each branch representing a file, a symbolic link, or a nested directory structure. 
+    - This approach allows the entire environment to be self-contained, reducing reliance on third-party repositories and maintaining **determinism**, as the service's execution environment remains the same regardless of the host node.
+
+- **Environment Variables**: Specifies key-value pairs that the service can access during runtime, allowing dynamic configuration without altering the core file structure.
+
+- **Entrypoint**: Defines the script or command that initiates the service's main process when executed. This ensures the node knows how to start the service properly.
+
+- **Config**: This includes configuration paths and formats that the node should load when starting the service. It provides necessary information like initial resource allocations or specific runtime parameters.
+
+- **Expected Gateway**: Describes how the service communicates with the CELAUT node, specifying the protocols and methods (gateway app protocol) it expects from the node. This component ensures smooth communication between the service and its host environment, treating the node like an operating system that provides system-level interactions.
+
+The BOX specification allows CELAUT services to be portable, reproducible, and free from third-party dependencies, aligning with the principles of **simplicity** and **determinism**.
 
 ### Interface | *API*
-This component defines how the service can be interacted with, including the ports it listens on, the communication protocols it supports, and the methods it defines. It specifies the application protocol, the slots, and the cost function (optional).
+The **API** component defines how clients and other services can interact with a service, specifying the protocols, endpoints, and methods through which data is exchanged. It includes the following elements:
 
+- **App Protocol (AppDef)**: This specifies the application-level protocol that defines the service’s callable functions:
+    - **Methods**: Each method has a defined input and output structure, allowing external services or clients to interact with specific functions of the service. This is akin to defining functions in a programming API.
+    - For example, a method might allow a client to request data, submit a transaction, or perform a specific computation through the defined slots.
+
+- **Slots**: Slots define the specific functions or methods exposed by the service, associated with network ports and transport protocols. Each slot includes:
+    - **Port**: The network port that the service listens on for incoming requests.
+    - **Transport Protocol**: The specific protocol used for communication (e.g., TCP, custom binary protocols).
+
+- **Contract Ledger**: Specifies the use of decentralized ledgers for handling payment and reputation. It includes:
+    - **Payment Contracts**: Defines how the service handles financial transactions, potentially charging users for its functionality.
+    - **Reputation Proofs**: Describes how the service uses reputation contracts, which can be used to verify its reliability and trustworthiness.
+
+- **Cost Function (Optional)**: Defines the conditions under which a service requires payment for its operations. This function is useful for monetizing resource-intensive functions or usage, ensuring transparency in how charges are calculated.
+
+The API specification allows services to be easily accessed and used by clients while maintaining a consistent method of interaction. It supports the **decentralization** principle of CELAUT by allowing services to be self-sufficient in their communication without needing to rely on a centralized controller for protocol negotiation.
 
 ### Network | *NET*
+The **NET** component defines the scope of external network access that a service can request and interact with. By default, a service is isolated from external networks, only able to communicate with its parent service (the client that created it), its child services, and the CELAUT node that executes it. This isolation ensures **determinism** and enhances **security** by preventing unauthorized data leaks or interactions.
+
+However, some services require access to external networks for their functionality. For example, a service that acts as a Bitcoin node needs to interact with the broader Bitcoin network. To enable this without compromising security, CELAUT allows the following:
+
+- **Controlled External Access**: The service does not directly access external IP addresses or nodes. Instead, it sends a request to its CELAUT node, specifying its need for access to a particular network (e.g., "bitcoin-mainnet"). The CELAUT node then verifies and provides a list of trusted peer nodes that the service can interact with.
+  
+- **Service Request for Network Peers**: A service like a Bitcoin node may request additional resources or network peers by communicating with its CELAUT node. For example, it might request, "I need peers from 'bitcoin-mainnet'." The node evaluates this request and returns a list of verified instances (which may be other Bitcoin nodes running as services on the CELAUT network).
+
+- **Node Awareness and Redirection**: If the CELAUT node that received the service request knows it cannot find suitable peers (e.g., no other Bitcoin nodes in its network), it will look for a peer CELAUT node that can fulfill this requirement. This ensures that services can always find the necessary network connections, even if the initial CELAUT node is limited.
+
+The **NET** component allows CELAUT to balance the need for external connectivity with the core values of **security** and **determinism**, ensuring that services remain isolated unless explicitly permitted to access broader networks.
 
 <br><br>
 
 The specification of a service is a key part of the CELAUT architecture, as it allows services to be deployed and executed in a consistent and predictable manner. 
-
-It also allows for services to be shared and reused across the network, which can help to reduce development costs and improve the overall efficiency of the system.
 
 <br>
 
