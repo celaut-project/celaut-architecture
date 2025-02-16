@@ -2,10 +2,6 @@
 
 <br>
 
-**Context**
-
-In the 1940s, mathematician John von Neumann, in collaboration with Stanislaw Ulam, introduced the concept of cellular automata, creating models that demonstrated how complex behaviors could emerge from simple rules. Building on this foundation, in 1970, John Horton Conway introduced "The Game of Life," a cellular automaton that became a classic example of how a system could evolve into intricate patterns from basic interactions. These ideas offer valuable insights into how decentralized systems can achieve complexity without central control, which serves as a guiding philosophy for the design of CELAUT.
-
 **Definition**
 
 CELAUT is a set of simple rules for software design and distribution, aiming to create a robust, scalable, and adaptive system through the principles of **decentralization**, **simplicity**, and **determinism**.
