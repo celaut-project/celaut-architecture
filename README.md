@@ -1,6 +1,10 @@
-# CELAUT: A peer-to-peer architecture for software design and distribution
+# *CEL-AUT*: A peer-to-peer architecture for software design and distribution
 
 <br>
+
+**Context**
+
+In the 1940s, mathematician John von Neumann, in collaboration with Stanislaw Ulam, introduced the concept of cellular automata, creating models that demonstrated how complex behaviors could emerge from simple rules. Building on this foundation, in 1970, John Horton Conway introduced "The Game of Life," a cellular automaton that became a classic example of how a system could evolve into intricate patterns from basic interactions. These ideas offer valuable insights into how decentralized systems can achieve complexity without central control, which serves as a guiding philosophy for the design of *cel-aut*.
 
 **Definition**
 
@@ -12,7 +16,7 @@ CELAUT is a set of simple rules for software design and distribution, aiming to 
 2. **Simplicity**: Minimalistic rules that reduce complexity, ensuring each component can be understood and maintained easily.
 3. **Determinism**: Services behave predictably, following defined rules that ensure reproducibility of outcomes across different nodes.
 
-**CELAUT Architecture: Nodes and Services**
+***Cel-aut* Architecture: Nodes and Services**
 
 CELAUT’s architecture is built around two core elements: **nodes** and **services**. Together, they create a distributed network where each part contributes to the overall functionality, much like the agents in a cellular automaton.
 
