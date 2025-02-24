@@ -1,4 +1,4 @@
-# *Cel-aut*: A peer-to-peer architecture for software design and distribution
+# *Celaut*: A peer-to-peer architecture for software design and distribution
 
 <br>
 
