@@ -91,23 +91,13 @@ The **BOX** component defines the environment in which the service will run, ens
 The BOX specification allows *Celaut* services to be portable, reproducible, and free from third-party dependencies, aligning with the principles of **simplicity** and **determinism**.
 
 ### Interface | *API*
-The **API** component defines how clients and other services can interact with a service, specifying the protocols, endpoints, and methods through which data is exchanged. It includes the following elements:
+The *API* (Application Programming Interface) in Celaut is the set of rules and specifications that define how clients and other services can interact with a service within the ecosystem. Its primary purpose is to establish a clear and consistent method for different software components to communicate with each other, ensuring that services are accessible and usable in a predictable manner.
 
-- **App Protocol (AppDef)**: This specifies the application-level protocol that defines the service’s callable functions:
-    - **Methods**: Each method has a defined input and output structure, allowing external services or clients to interact with specific functions of the service. This is akin to defining functions in a programming API.
-    - For example, a method might allow a client to request data, submit a transaction, or perform a specific computation through the defined slots.
+Through the *API*, communication protocols and endpoints are defined for a service to receive and process requests. This ensures that any external entity, whether a user or another service, can integrate with the service by following a standardized set of instructions without needing to understand its internal workings.
 
-- **Slots**: Slots define the specific functions or methods exposed by the service, associated with network ports and transport protocols. Each slot includes:
-    - **Port**: The network port that the service listens on for incoming requests.
-    - **Transport Protocol**: The specific protocol used for communication (e.g., TCP, custom binary protocols).
+A fundamental aspect of the *API* in Celaut is its role in decentralization. By providing a well-defined interface, services can operate autonomously without relying on a centralized controller to manage interactions. This allows the system to be more scalable and resilient, as each service is self-sufficient in its ability to communicate and collaborate with other components of the ecosystem.
 
-- **Contract Ledger**: Specifies the use of decentralized ledgers for handling payment and reputation. It includes:
-    - **Payment Contracts**: Defines how the service handles financial transactions, potentially charging users for its functionality.
-    - **Reputation Proofs**: Describes how the service uses reputation contracts, which can be used to verify its reliability and trustworthiness.
-
-- **Cost Function (Optional)**: Defines the conditions under which a service requires payment for its operations. This function is useful for monetizing resource-intensive functions or usage, ensuring transparency in how charges are calculated.
-
-The API specification allows services to be easily accessed and used by clients while maintaining a consistent method of interaction. It supports the **decentralization** principle of *Celaut* by allowing services to be self-sufficient in their communication without needing to rely on a centralized controller for protocol negotiation.
+The *API* specification allows services to be easily accessed and used by clients while maintaining a consistent method of interaction. It supports the **decentralization** principle of *Celaut* by allowing services to be self-sufficient in their communication without needing to rely on a centralized controller for protocol negotiation.
 
 ### Network | *NET*
 The **NET** component defines the scope of external network access that a service can request and interact with. By default, a service is isolated from external networks, only able to communicate with its parent service (the client that created it), its child services, and the *Celaut* node that executes it. This isolation ensures **determinism** and enhances **security** by preventing unauthorized data leaks or interactions.
